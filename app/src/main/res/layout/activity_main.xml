@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.pharmacy.martin.lab01c2016.MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculadora Plazo Fijo"
+        android:id="@+id/tvCalculadora"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo Electronico"
+        android:id="@+id/tvCorreoElectronico"
+        android:textSize="18dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editTextEmail"
+        android:textSize="18dp"
+        android:singleLine="true"
+        android:background="#ffffff"
+        android:textStyle="italic"
+        android:hint="Correo electronico" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CUIT"
+        android:id="@+id/textView"
+        android:textSize="18dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/tfCuit"
+        android:text="ingrese su CUIT"
+        android:textSize="18dp"
+        android:textIsSelectable="false"
+        android:singleLine="false"
+        android:enabled="false"
+        android:background="#ffffff"
+        android:textStyle="italic"
+        android:hint="Ingrese su CUIT" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvImporte"
+        android:text="Importe"
+        android:textSize="18dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tfImporte"
+        android:textSize="18dp"
+        android:background="#ffffff"
+        android:hint="Ingrese el importe"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tfDias"
+        android:text="cantidad de dias"
+        android:textSize="18dp" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sbCantDias"
+        android:max="365"
+        android:indeterminate="false"
+        android:progress="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/tvDias"
+        android:layout_gravity="center_horizontal"
+        android:textSize="14dp" />
+
+</LinearLayout>
