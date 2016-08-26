@@ -35,7 +35,6 @@
         android:id="@+id/editTextEmail"
         android:textSize="18dp"
         android:singleLine="true"
-        android:background="#ffffff"
         android:textStyle="italic"
         android:hint="Correo electronico" />
 
@@ -56,9 +55,9 @@
         android:textIsSelectable="false"
         android:singleLine="false"
         android:enabled="true"
-        android:background="#ffffff"
         android:textStyle="italic"
-        android:hint="Ingrese su CUIT" />
+        android:hint="Ingrese su CUIT"
+        android:theme="@style/Base.AlertDialog.AppCompat.Light" />
 
     <TextView
         android:layout_width="match_parent"
@@ -73,14 +72,14 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/tfImporte"
-        android:hint="ingrese ei importe"
+        android:hint="Ingrese ei importe"
         android:theme="@style/Base.AlertDialog.AppCompat.Light" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tfDias"
-        android:text="cantidad de dias"
+        android:text="Cantidad de dias"
         android:textSize="18dp" />
 
     <SeekBar
