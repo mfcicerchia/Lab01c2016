@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         /**inicializacion de los escuchadores de eventos*/
         sbCantDias.setOnSeekBarChangeListener(this);
-        btnConfirmar.setOnClickListener((View.OnClickListener) this);
+        btnConfirmar.setOnClickListener(this);
 
 
         tvDias.setText("Dias: " + sbCantDias.getProgress());
@@ -83,8 +83,13 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     /**Manejador de evento del Boton Confirmar*/
     @Override
     public void onClick(View v) {
+        /**Aca jugar con los colores verde y rojo*/
         tvInfoConfirmacion.setText(String.valueOf("El plazo fijo ha sido confirmadio, recibira $$$$ al finalizar el plazo"));
     }
 
+    private void calcularGanancias(){
+        this.importe =0;
+
+    }
 
 }
