@@ -97,4 +97,36 @@
         android:layout_gravity="center_horizontal"
         android:textSize="14dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rendimiento"
+        android:id="@+id/tvRendimiento"
+        android:textSize="18dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/tfCampoRendimiento"
+        android:hint="0"
+        android:textSize="18dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Renovar Automaticamente al Vencimiento"
+        android:id="@+id/chBoxRenovar"
+        android:checked="false"
+        android:textSize="15dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HACER PLAZO FIJO"
+        android:id="@+id/btnHacerPlazo"
+        android:textSize="15dp" />
+
 </LinearLayout>
