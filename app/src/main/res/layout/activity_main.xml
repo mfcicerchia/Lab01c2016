@@ -8,7 +8,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.pharmacy.martin.lab01c2016.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:baselineAligned="true"
+    android:touchscreenBlocksFocus="true"
+    android:textAlignment="center">
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,11 +52,10 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/tfCuit"
-        android:text="ingrese su CUIT"
         android:textSize="18dp"
         android:textIsSelectable="false"
         android:singleLine="false"
-        android:enabled="false"
+        android:enabled="true"
         android:background="#ffffff"
         android:textStyle="italic"
         android:hint="Ingrese su CUIT" />
@@ -68,11 +70,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
         android:id="@+id/tfImporte"
-        android:textSize="18dp"
-        android:background="#ffffff"
-        android:hint="Ingrese el importe"
-        android:textStyle="italic" />
+        android:hint="ingrese ei importe"
+        android:theme="@style/Base.AlertDialog.AppCompat.Light" />
 
     <TextView
         android:layout_width="match_parent"
@@ -109,7 +111,7 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/tfCampoRendimiento"
+        android:id="@+id/tfRendimiento"
         android:hint="0"
         android:textSize="18dp" />
 
@@ -126,7 +128,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HACER PLAZO FIJO"
-        android:id="@+id/btnHacerPlazo"
+        android:id="@+id/btnConfirmar"
         android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Texto indicando la realizacion del plazo fijo"
+        android:id="@+id/tvInfoConfirmacion"
+        android:textColorHighlight="#1c2617"
+        android:textSize="16dp" />
 
 </LinearLayout>
