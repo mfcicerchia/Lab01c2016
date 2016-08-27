@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
-
+    <item name="interes5000_Menor30">0.25</item>
+    <item name="interes5000_Mayor30">0.275</item>
+    <item name="interes99999_Menor30">0.3</item>
+    <item name="interes99999_Mayor30">0.323</item>
+    <item name="interesMayor99999_Menor30">0.35</item>
+    <item name="interesMayor99999_Mayor30">0.385</item>
 </resources>
