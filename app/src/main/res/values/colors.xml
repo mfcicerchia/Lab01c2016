@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="error">#FFFFFF</color>
-    <color name="correcto">#FFFFFF</color>
+    <color name="error">#FF0000</color>
+    <color name="correcto">#2FFF00</color>
 </resources>
