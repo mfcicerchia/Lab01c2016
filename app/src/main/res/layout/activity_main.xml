@@ -16,14 +16,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculadora Plazo Fijo"
+        android:text="@string/Title_app"
         android:id="@+id/tvCalculadora"
         android:textSize="18dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Correo Electronico"
+        android:text="Correo Electrónico"
         android:id="@+id/tvCorreoElectronico"
         android:textSize="18dp" />
 
@@ -41,7 +41,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CUIT"
+        android:text="@string/Etiqueta_CUIL"
         android:id="@+id/textView"
         android:textSize="18dp" />
 
@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvImporte"
-        android:text="Importe"
+        android:text="@string/Etiqueta_Importe"
         android:textSize="18dp" />
 
     <EditText
@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tfDias"
-        android:text="Cantidad de dias"
+        android:text="@string/Etiqueta_CantDias"
         android:textSize="18dp" />
 
     <SeekBar
@@ -101,7 +101,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rendimiento"
+        android:text="@string/Etiqueta_Rendimiento"
         android:id="@+id/tvRendimiento"
         android:textSize="18dp" />
 
@@ -117,7 +117,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Renovar Automaticamente al Vencimiento"
+        android:text="@string/Texto_CheckBox"
         android:id="@+id/chBoxRenovar"
         android:checked="false"
         android:textSize="15dp" />
@@ -126,7 +126,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HACER PLAZO FIJO"
+        android:text="@string/Texto_Boton"
         android:id="@+id/btnConfirmar"
         android:textSize="15dp" />
 

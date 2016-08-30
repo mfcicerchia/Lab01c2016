@@ -1,16 +1,15 @@
 package com.pharmacy.martin.lab01c2016;
 
-import android.net.wifi.p2p.WifiP2pManager;
-import android.support.v7.app.AppCompatActivity;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener {
 
@@ -68,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         }
 
     }
+
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
 
@@ -90,6 +90,41 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private void calcularGanancias(){
         this.importe =0;
 
+    }
+
+    private double calcularInteres(){
+        int periodo = this.sbCantDias.getProgress();
+        double inversion = this.importe;
+        double interes= 0;
+        double tasa;
+//        Resources recursos = getResources();
+
+
+        if(inversion >= 0 && inversion<5000){
+            if(periodo >= 0 && inversion <30){
+                return interes;
+            }
+            if (periodo >= 30){
+                return interes;
+            }
+        }
+        if(inversion >=500 && inversion < 99999){
+            if(periodo >= 0 && inversion <30){
+                return interes;
+            }
+            if (periodo >= 30){
+                return interes;
+            }
+        }
+        if (inversion >= 99999) {
+            if (periodo >= 0 && inversion < 30) {
+                return interes;
+            }
+            if (periodo >= 30) {
+                return interes;
+            }
+        }
+        return interes;
     }
 
 }
