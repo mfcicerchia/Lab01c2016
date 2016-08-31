@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Correo Electronico"
+        android:text="@string/email"
         android:id="@+id/tvCorreoElectronico"
         android:textSize="18dp" />
 
@@ -41,8 +41,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CUIT"
-        android:id="@+id/textView"
+        android:text="@string/cuit"
+        android:id="@+id/tvCuit"
         android:textSize="18dp" />
 
     <EditText
@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvImporte"
-        android:text="Importe"
+        android:text="@string/importe"
         android:textSize="18dp" />
 
     <EditText
@@ -72,14 +72,14 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/tfImporte"
-        android:hint="Ingrese ei importe"
+        android:hint="Ingrese el importe"
         android:theme="@style/Base.AlertDialog.AppCompat.Light" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tfDias"
-        android:text="Cantidad de dias"
+        android:text="@string/cantDias"
         android:textSize="18dp" />
 
     <SeekBar
@@ -101,11 +101,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rendimiento"
+        android:text="@string/rendimiento"
         android:id="@+id/tvRendimiento"
         android:textSize="18dp" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
@@ -117,7 +117,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Renovar Automaticamente al Vencimiento"
+        android:text="@string/renovar"
         android:id="@+id/chBoxRenovar"
         android:checked="false"
         android:textSize="15dp" />
@@ -126,14 +126,14 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HACER PLAZO FIJO"
+        android:text="@string/mkPlazoFijo"
         android:id="@+id/btnConfirmar"
         android:textSize="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Texto indicando la realizacion del plazo fijo"
+        android:text="@string/infoConfiramción"
         android:id="@+id/tvInfoConfirmacion"
         android:textColorHighlight="#1c2617"
         android:textSize="16dp" />

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
-
+    <fraction name="interes5000_Menor30">25%</fraction>
+    <fraction name="interes5000_Mayor30">27.5%</fraction>
+    <fraction name="interes99999_Menor30">30%</fraction>
+    <fraction name="interes99999_Mayor30">32.3%</fraction>
+    <fraction name="interesMayor99999_Menor30">35%</fraction>
+    <fraction name="interesMayor99999_Mayor30">38.5%</fraction>
 </resources>

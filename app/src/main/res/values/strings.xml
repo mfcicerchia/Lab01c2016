@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Lab01c2016</string>
+    <string name="email">Correo Electronico</string>
+    <string name="cuit">CUIT</string>
+    <string name="importe">Importe</string>
+    <string name="cantDias">Cantidad de días</string>
+    <string name="rendimiento">Rendimiento</string>
+    <string name="infoConfiramción">Texto indicando la realización del plazo fijo</string>
+    <string name="mkPlazoFijo">HACER PLAZO FIJO</string>
+    <string name="renovar">Renovar automaticamente al vencimiento</string>
 </resources>
