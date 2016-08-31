@@ -18,7 +18,9 @@
         android:layout_height="wrap_content"
         android:text="Calculadora Plazo Fijo"
         android:id="@+id/tvCalculadora"
-        android:textSize="18dp" />
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -117,7 +119,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/infoConfiramción"
         android:id="@+id/tvInfoConfirmacion"
         android:textColorHighlight="#1c2617"
         android:textSize="16dp" />

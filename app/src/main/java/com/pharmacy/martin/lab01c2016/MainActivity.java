@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -75,24 +76,30 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         ArrayList<String> msgList = new ArrayList<>();
         if(controlarDatos(msgList)){
             tvInfoConfirmacion.setTextColor(ContextCompat.getColor(this, R.color.correcto));
-            tvInfoConfirmacion.setTextSize(28);
+            tvInfoConfirmacion.setTextSize(18);
             tvInfoConfirmacion.setText(String.valueOf("El plazo fijo ha sido confirmadio, recibira " + calcularGanancias() + " al finalizar el plazo"));
         }
         else{
             tvInfoConfirmacion.setTextColor(ContextCompat.getColor(this, R.color.error));
-            tvInfoConfirmacion.setTextSize(28);
+            tvInfoConfirmacion.setTextSize(18);
             tvInfoConfirmacion.setText(String.valueOf(TextUtils.join("\n",msgList)));
 
         }
     }
 
+    /*Metodo para calcular las ganancias*/
     private double calcularGanancias(){
 
-        DecimalFormat resultado = new DecimalFormat("###.##");
+        /*Definimos el formato de salida*/
+        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols();
+        otherSymbols.setDecimalSeparator('.');
+        DecimalFormat resultado = new DecimalFormat("###.##",otherSymbols);
+        /*Definiciones de variables*/
         double interes, monto;
         float tasa,dias;
         EditText auxMonto = (EditText) findViewById(R.id.tfImporte);
         SeekBar auxDias = (SeekBar) findViewById(R.id.sbCantDias);
+
         monto = Integer.parseInt(auxMonto.getText().toString());
         dias = auxDias.getProgress();
         if(monto < 5000){

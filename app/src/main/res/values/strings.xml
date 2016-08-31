@@ -5,7 +5,6 @@
     <string name="importe">Importe</string>
     <string name="cantDias">Cantidad de días</string>
     <string name="rendimiento">Rendimiento</string>
-    <string name="infoConfiramción">Texto indicando la realización del plazo fijo</string>
     <string name="mkPlazoFijo">HACER PLAZO FIJO</string>
     <string name="renovar">Renovar automaticamente al vencimiento</string>
     <string name="errEmail">Ha introducido un eMail incorrecto</string>
