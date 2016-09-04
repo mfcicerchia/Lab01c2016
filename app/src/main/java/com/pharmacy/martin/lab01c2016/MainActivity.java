@@ -4,7 +4,9 @@ import android.net.wifi.p2p.WifiP2pManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -20,14 +22,14 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener{
 
     protected TextView tvDias;
     protected SeekBar sbCantDias;
     protected Button btnConfirmar;
     protected CheckBox chBoxRenovar;
     protected EditText tfImporte;
-    protected TextView tfRendiminto;
+    protected TextView tvNumRendimiento;
     protected TextView tvInfoConfirmacion;
 
     protected double resultado;
@@ -45,14 +47,34 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         chBoxRenovar = (CheckBox) findViewById(R.id.chBoxRenovar);
         tfImporte = (EditText) findViewById(R.id.tfImporte);
         tvInfoConfirmacion = (TextView) findViewById(R.id.tvInfoConfirmacion);
+        tvNumRendimiento = (TextView) findViewById(R.id.tvNumRendimiento);
 
 
         /**inicializacion de los escuchadores de eventos*/
         sbCantDias.setOnSeekBarChangeListener(this);
         btnConfirmar.setOnClickListener(this);
-
-
         tvDias.setText("Dias: " + sbCantDias.getProgress());
+        tfImporte.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(tfImporte!=null){
+                    tvNumRendimiento.setText("$"+String.valueOf(calcularGanancias()));
+                }
+                else {
+                    tvNumRendimiento.setText("$0.0");
+                }
+            }
+        });
     }
 
     /**Manejadores de evento de la SeekBar*/
@@ -64,10 +86,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     public void onStartTrackingTouch(SeekBar seekBar) {
 
     }
-
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
         tvDias.setText("Dias: " + sbCantDias.getProgress());
+        tvNumRendimiento.setText("$"+String.valueOf(calcularGanancias()));
     }
 
     /**Manejador de evento del Boton Confirmar*/
@@ -77,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         if(controlarDatos(msgList)){
             tvInfoConfirmacion.setTextColor(ContextCompat.getColor(this, R.color.correcto));
             tvInfoConfirmacion.setTextSize(18);
-            tvInfoConfirmacion.setText(String.valueOf("El plazo fijo ha sido confirmadio, recibira " + calcularGanancias() + " al finalizar el plazo"));
+            tvInfoConfirmacion.setText(String.valueOf("El plazo fijo ha sido confirmadio, recibira $" + calcularGanancias() + " al finalizar el plazo"));
         }
         else{
             tvInfoConfirmacion.setTextColor(ContextCompat.getColor(this, R.color.error));
@@ -99,8 +121,12 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         float tasa,dias;
         EditText auxMonto = (EditText) findViewById(R.id.tfImporte);
         SeekBar auxDias = (SeekBar) findViewById(R.id.sbCantDias);
-
-        monto = Integer.parseInt(auxMonto.getText().toString());
+        if (auxMonto.getText() != null) {
+            monto = Integer.parseInt(auxMonto.getText().toString());
+        }
+        else{
+            monto = 0;
+        }
         dias = auxDias.getProgress();
         if(monto < 5000){
             if(dias<30){
@@ -130,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         interes = monto * ((Math.pow((1+tasa),(dias/360)))-1);
 
-        return Double.parseDouble(resultado.format(interes + monto));
+        return Double.parseDouble(resultado.format(interes));
 
     }
 
@@ -155,18 +181,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             state = false;
         }
         return state;
-    }
-
-    private String arrayToString(ArrayList<String> lista){
-        StringBuilder sbResultado = new StringBuilder();
-        String resutlado=null;
-
-        for (String s : lista){
-            sbResultado.append(s);
-            sbResultado.append("\t");
-        }
-
-        return sbResultado.toString();
     }
 
 }
