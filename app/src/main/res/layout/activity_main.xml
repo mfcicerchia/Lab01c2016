@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:text="Calculadora Plazo Fijo"
         android:id="@+id/tvCalculadora"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_gravity="center"
         android:textStyle="bold" />
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="@string/email"
         android:id="@+id/tvCorreoElectronico"
-        android:textSize="18dp" />
+        android:textSize="16dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/editTextEmail"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:singleLine="true"
         android:textStyle="italic"
         android:hint="Correo electronico" />
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text="@string/cuit"
         android:id="@+id/tvCuit"
-        android:textSize="18dp" />
+        android:textSize="16dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -53,7 +53,7 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/tfCuit"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:textIsSelectable="false"
         android:singleLine="false"
         android:enabled="true"
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvImporte"
         android:text="@string/importe"
-        android:textSize="18dp" />
+        android:textSize="16dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -75,14 +75,15 @@
         android:ems="10"
         android:id="@+id/tfImporte"
         android:hint="Ingrese el importe"
-        android:theme="@style/Base.AlertDialog.AppCompat.Light" />
+        android:theme="@style/Base.AlertDialog.AppCompat.Light"
+        android:textSize="16dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tfDias"
         android:text="@string/cantDias"
-        android:textSize="18dp" />
+        android:textSize="16dp" />
 
     <SeekBar
         android:layout_width="match_parent"
@@ -105,7 +106,7 @@
         android:layout_height="wrap_content"
         android:text="@string/rendimiento"
         android:id="@+id/tvRendimiento"
-        android:textSize="18dp" />
+        android:textSize="16dp" />
 
     <TextView
         android:layout_width="wrap_content"

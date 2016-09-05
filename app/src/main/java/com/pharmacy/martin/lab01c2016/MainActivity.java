@@ -67,12 +67,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(tfImporte!=null){
-                    tvNumRendimiento.setText("$"+String.valueOf(calcularGanancias()));
-                }
-                else {
-                    tvNumRendimiento.setText("$0.0");
-                }
+                tvNumRendimiento.setText("$"+String.valueOf(calcularGanancias()));
+
             }
         });
     }
@@ -96,14 +92,14 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     @Override
     public void onClick(View v) {
         ArrayList<String> msgList = new ArrayList<>();
-        if(controlarDatos(msgList)){
+        if(controlarDatos(msgList) && tfImporte.getText().length()> 0){
             tvInfoConfirmacion.setTextColor(ContextCompat.getColor(this, R.color.correcto));
-            tvInfoConfirmacion.setTextSize(18);
+            tvInfoConfirmacion.setTextSize(16);
             tvInfoConfirmacion.setText(String.valueOf("El plazo fijo ha sido confirmadio, recibira $" + calcularGanancias() + " al finalizar el plazo"));
         }
         else{
             tvInfoConfirmacion.setTextColor(ContextCompat.getColor(this, R.color.error));
-            tvInfoConfirmacion.setTextSize(18);
+            tvInfoConfirmacion.setTextSize(16);
             tvInfoConfirmacion.setText(String.valueOf(TextUtils.join("\n",msgList)));
 
         }
@@ -121,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         float tasa,dias;
         EditText auxMonto = (EditText) findViewById(R.id.tfImporte);
         SeekBar auxDias = (SeekBar) findViewById(R.id.sbCantDias);
-        if (auxMonto.getText() != null) {
+        if (auxMonto.getText().length() != 0) {
             monto = Integer.parseInt(auxMonto.getText().toString());
         }
         else{
@@ -163,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     /*Metodo para comprobar que los datos ingresados sean correctos*/
     private boolean controlarDatos(ArrayList<String> msgList){
         boolean state = true;
+        /*Control de correo electronico*/
         EditText mail = (EditText)findViewById(R.id.editTextEmail);
         Pattern patMail = Pattern.compile("^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher matEmail = patMail.matcher(mail.getText().toString());
@@ -171,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             msgList.add(getResources().getText(R.string.errEmail).toString());
             state = false;
         }
-
+        /*Control de CUIT*/
         EditText cuit = (EditText)findViewById(R.id.tfCuit);
         Pattern patCuit = Pattern.compile("^(20|23|27)\\d{7,8}\\d$");
         Matcher matCuit = patCuit.matcher(cuit.getText().toString());
@@ -179,6 +176,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             //Si no es un cuit valido
             msgList.add(getResources().getText(R.string.errCuit).toString());
             state = false;
+        }
+        /*Control de importe*/
+        if(tfImporte.getText().length()==0){
+            msgList.add(getResources().getText(R.string.errImporte).toString());
         }
         return state;
     }

@@ -9,4 +9,5 @@
     <string name="renovar">Renovar automaticamente al vencimiento</string>
     <string name="errEmail">Ha introducido un eMail incorrecto</string>
     <string name="errCuit">Ha introducido un CUIT incorrecto</string>
+    <string name="errImporte">Debe introducir un importe</string>
 </resources>
